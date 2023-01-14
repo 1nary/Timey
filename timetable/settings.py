@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-1um)tlpy&!p(4wv=fo-d61^jqd8xs20mdsxfo(s!bf&*3ey56v
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.up.railway.app']
+ALLOWED_HOSTS = []
 
 
 # Application definition
