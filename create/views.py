@@ -14,7 +14,7 @@ def index(request):
     else:
       LectureInfo = createForm(request.POST, instance=obj)
       LectureInfo.save()
-    return redirect(to='/timetable')
+    return redirect(to='/')
   params = {
     'form': createForm(),
     'data': data,
@@ -33,7 +33,7 @@ def edit(request,num):
   if(request.method == 'POST'):
     LectureInfo = createForm(request.POST, instance=obj)
     LectureInfo.save()
-    return redirect(to='/timetable')
+    return redirect(to='/')
   return render(request, 'create/edit.html', params)
 
 def delete(request, num):
@@ -41,7 +41,7 @@ def delete(request, num):
   lecture = Lecture.objects.get(id=num)
   if(request.method=='POST'):
     lecture.delete()
-    return redirect(to='/timetable')
+    return redirect(to='/')
   params = {
     'data': data,
     'id': num,
