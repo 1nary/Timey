@@ -6,21 +6,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>時間割 for Student</title>
   <meta name="description" content="">
-  <link rel="shortcut icon" href="{% static 'create/img/favicon.ico' %}">
-  <link rel="stylesheet" href="{% static 'create/css/syle.css' %}">
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/syle.css' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="{% static 'create/js/modal-create.js' %}"></script>
-  <script src="{% static 'create/js/modal-edit.js' %}"></script>
+  <script src="{% static 'js/modal-create.js' %}"></script>
+  <script src="{% static 'js/modal-edit.js' %}"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- start modal-edit -->
-  <div class="modal">
+  <!-- modalCreate  -->
+  <div class="modal modal-type-create">
     <div class="modal__bg">
     </div>
+      <div class="modal__contents modal__contents-type--create">
+        <form action="{% url 'index' %}" method="post" class="form form--type-create" autocomplete="off">
+          {% csrf_token %}
+          <p class="form__contents-title">曜日</p>
+          <div class="form__contents form__contents-type--select">
+            {% for radio in form.week %}
+              {{ radio.tag }}
+              <label class="form__label form__label--week" for="id_week_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
+            {% endfor %}
+          </div>
+          <p class="form__contents-title">時限</p>
+          <div class="form__contents form__contents-type--select">
+            {% for radio in form.period %}
+              {{ radio.tag }}
+              <label class="form__label form__label--period" for="id_period_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
+            {% endfor %}
+          </div>
+          <div class="form__contents form__contents-type--input-text">
+            <label class="form__contents-title" for="id_name">講義</label>
+            {{form.name}}
+          </div>
+          <div class="form__contents form__contents-type--input-text">
+            <label class="form__contents-title" for="id_teacher">担当教員</label>
+            {{form.teacher}}
+          </div>
+          <div class="form__contents form__contents-type--input-text">
+            <label class="form__contents-title" for="id_room">教室</label>
+            {{form.room}}
+          </div>
+          <div class="form__contents form__contents--btn">
+            <p class="btn btn--disabled" id="btn-close">閉じる</p>
+            <input class="btn form__btn" type="submit" value="追加する">
+          </div>
+        </form>
+      </div>
+  </div>
+  <!-- /modalCreate -->
+
+
+  <!-- modalEdit -->
+  <div class="modal">
     <div class="modal__contents modal__contents-type--edit">
       <ul class="modal__contents-menu">
         <li class="modal__contents-menu-title modal__contents--week">曜日</li>
@@ -37,7 +78,7 @@
         <li class="modal__contents--name">{{item.name}}</li>
         <li class="modal__contents--teacher">{{item.teacher}}</li>
         <li class="modal__contents--room">{{item.room}}</li>
-        <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">更新ページ</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除ページ</a></li>
+        <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">更新</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
       </ul>
       {% endfor %}
       <div class="modal__contents-type--edit-btn">
@@ -45,7 +86,7 @@
       </div>
     </div>
   </div>
-  <!-- end modal-edit -->
+  <!-- /modalEdit -->
 
 
   <!-- start body-wrap -->
@@ -54,8 +95,7 @@
     <!-- start sidebar -->
     <div class="body__sidebar">
         <div class="body__sidebar-logo">
-          <a href=""><img class="body__sidebar-logo-img" src="{% static 'create/img/logo.png' %}" alt=""></a>
-          <h1 class="body__sidebar-logo-text"><a href="{% url 'index' %}">時間割<br>for<br>Student</a></h1>
+          <a href="{% url 'index' %}"><img class="body__sidebar-logo-img" src="{% static 'img/logo.svg' %}" alt=""></a>
         </div>
         <a class="btn btn--disabled body__sidebar-btn-create " href="{% url 'index' %}">作成ページ</a>
         <div class="body__sidebar-time">
@@ -63,7 +103,6 @@
             <span id="year">{% now "Y" %}</span><br><span id="month">{% now "m" %}</span><span id="space">/</span><span id="date">{% now "d" %}</span><span id="day">{% now "l" %}</span>
           </div>
         </div>
-        <p class="body__sidebar-creator">@1nary_com</p>
     </div>
     <!-- end sidebar -->
 

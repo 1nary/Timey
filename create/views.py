@@ -18,7 +18,7 @@ def index(request):
   params = {
     'form': createForm(),
     'data': data,
-    'title': '＃時間割作成',
+    'title': '履修作成',
   }
   return render(request, 'create/index.html', params)
 
@@ -28,7 +28,7 @@ def edit(request,num):
   params = {
     'data': data,
     'form': createForm(instance=obj),
-    'title': '＃時間割更新・削除',
+    'title': '履修更新・削除',
   }
   if(request.method == 'POST'):
     LectureInfo = createForm(request.POST, instance=obj)
@@ -46,6 +46,6 @@ def delete(request, num):
     'data': data,
     'id': num,
     'obj': lecture,
-    'title': '＃時間割更新・削除',
+    'title': '履修更新・削除',
   }
   return render(request, 'create/delete.html',params)

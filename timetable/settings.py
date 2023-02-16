@@ -1,13 +1,20 @@
+import os
+from decouple import config
+from dj_database_url import parse as dburl
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 SECRET_KEY = 'django-insecure-1um)tlpy&!p(4wv=fo-d61^jqd8xs20mdsxfo(s!bf&*3ey56v'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=["*"]
+
+default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 
 # Application definition
@@ -55,10 +62,7 @@ WSGI_APPLICATION = 'timetable.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 
@@ -89,5 +93,9 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
