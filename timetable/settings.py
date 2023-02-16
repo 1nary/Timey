@@ -10,8 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-1um)tlpy&!p(4wv=fo-d61^jqd8xs20mdsxfo(s!bf&*3ey56v'
 
-DEBUG = False
-
+DEBUG = True
 ALLOWED_HOSTS=["*"]
 
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
