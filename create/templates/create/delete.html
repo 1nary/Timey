@@ -97,7 +97,7 @@
         <div class="body__sidebar-logo">
           <a href="{% url 'index' %}"><img class="body__sidebar-logo-img" src="{% static 'img/logo.svg' %}" alt=""></a>
         </div>
-        <a class="btn btn--disabled body__sidebar-btn-create " href="{% url 'index' %}">作成ページ</a>
+        {% comment %} <a class="btn btn--disabled body__sidebar-btn-create " href="{% url 'index' %}">作成ページ</a> {% endcomment %}
         <div class="body__sidebar-time">
           <div class="body__sidebar-date">
             <span id="year">{% now "Y" %}</span><br><span id="month">{% now "m" %}</span><span id="space">/</span><span id="date">{% now "d" %}</span><span id="day">{% now "l" %}</span>
