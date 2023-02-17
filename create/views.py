@@ -20,7 +20,7 @@ def index(request):
     'data': data,
     'title': '履修作成',
   }
-  return render(request, 'create/index.html', params)
+  return render(request, 'create/base.html', params)
 
 def edit(request,num):
   data = Lecture.objects.all()
