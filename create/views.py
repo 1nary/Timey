@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from create.forms import createForm
     
 def index(request):
-  data = Lecture.objects.all()
+  data = Lecture.objects.all().order_by('week','period')
   if(request.method == 'POST'):
     obj = Lecture()
     week = request.POST['week']
