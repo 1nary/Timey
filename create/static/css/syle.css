@@ -89,8 +89,9 @@ p {
   cursor: pointer;
 }
 .btn:hover {
-  opacity: 0.8;
-  transition: 0.4s;
+  /* opacity: 0.8; */
+  transition: 0.2s;
+  scale: 1.05;
 }
 .btn--disabled {
   background: transparent;
@@ -446,6 +447,7 @@ p {
   margin-left: auto;
 }
 .body__main-menu-btn {
+
 }
 .body__main-menu-btn-edit {
   margin-left: 15px;
