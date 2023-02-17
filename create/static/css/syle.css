@@ -367,16 +367,15 @@ p {
 .body__sidebar-time {
   width: 130px;
   height: 130px;
-  background: #26425F;
-  border-radius: 50%;
   text-align: center;
   justify-content: center;
   position: absolute;
-  bottom: 96px;
+  bottom: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%,20%);
   display: flex;
   align-items: center;
+  color: #26425F;
 }
 .body__sidebar-time #today {
   display: block;
