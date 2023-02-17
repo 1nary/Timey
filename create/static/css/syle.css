@@ -389,24 +389,24 @@ p {
   font-weight: 700;
 }
 .body__sidebar-time #month {
-  font-size: 23px;
+  font-size: 24px;
   line-height: 1.5;
   font-weight: 700;
 }
 .body__sidebar-time #space {
-  font-size: 23px;
+  font-size: 25px;
   line-height: 1.5;
   padding: 0 3px;
   font-weight: 700;
 }
 .body__sidebar-time #date {
-  font-size: 23px;
+  font-size: 24px;
   line-height: 1.5;
   font-weight: 700;
 }
 .body__sidebar-time #day {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 700;
 }
