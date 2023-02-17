@@ -1,115 +1,30 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Timey - web履修管理</title>
-  <meta name="description" content="">
-  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
-  <link rel="stylesheet" href="{% static 'css/syle.css' %}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="{% static 'js/modal-create.js' %}"></script>
-  <script src="{% static 'js/modal-edit.js' %}"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+  {% include 'create/head.html' %}
 </head>
 <body>
   
-  <!-- modalCreate  -->
-  <div class="modal modal-type-create">
-    <div class="modal__bg">
-    </div>
-      <div class="modal__contents modal__contents-type--create">
-        <form action="{% url 'index' %}" method="post" class="form form--type-create" autocomplete="off">
-          {% csrf_token %}
-          <p class="form__contents-title">曜日</p>
-          <div class="form__contents form__contents-type--select">
-            {% for radio in form.week %}
-              {{ radio.tag }}
-              <label class="form__label form__label--week" for="id_week_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
-            {% endfor %}
-          </div>
-          <p class="form__contents-title">時限</p>
-          <div class="form__contents form__contents-type--select">
-            {% for radio in form.period %}
-              {{ radio.tag }}
-              <label class="form__label form__label--period" for="id_period_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
-            {% endfor %}
-          </div>
-          <div class="form__contents form__contents-type--input-text">
-            <label class="form__contents-title" for="id_name">講義</label>
-            {{form.name}}
-          </div>
-          <div class="form__contents form__contents-type--input-text">
-            <label class="form__contents-title" for="id_teacher">担当教員</label>
-            {{form.teacher}}
-          </div>
-          <div class="form__contents form__contents-type--input-text">
-            <label class="form__contents-title" for="id_room">教室</label>
-            {{form.room}}
-          </div>
-          <div class="form__contents form__contents--btn">
-            <p class="btn btn--disabled" id="btn-close">閉じる</p>
-            <input class="btn form__btn" type="submit" value="追加する">
-          </div>
-        </form>
-      </div>
-  </div>
-  <!-- /modalCreate -->
+  <!-- create_modal  -->
+  {% include 'create/create_modal.html' %}
+  <!-- /create_modal -->
 
+  <!-- edit_modal -->
+  {% include 'create/edit_modal.html' %}
+  <!-- /edit_modal -->
 
-  <!-- modalEdit -->
-  <div class="modal">
-    <div class="modal__contents modal__contents-type--edit">
-      <ul class="modal__contents-menu">
-        <li class="modal__contents-menu-title modal__contents--week">曜日</li>
-        <li class="modal__contents-menu-title modal__contents--period">時限</li>
-        <li class="modal__contents-menu-title modal__contents--name">講義</li>
-        <li class="modal__contents-menu-title modal__contents--teacher">担当教員</li>
-        <li class="modal__contents-menu-title modal__contents--room">教室</li>
-        <li class="modal__contents-menu-title modal__contents--action">アクション</li>
-      </ul>
-      {% for item in data %}
-      <ul class="modal__contents-item">
-        <li class="modal__contents--week">{{item.get_week_display}}</li>
-        <li class="modal__contents--period">{{item.get_period_display}}</li>
-        <li class="modal__contents--name">{{item.name}}</li>
-        <li class="modal__contents--teacher">{{item.teacher}}</li>
-        <li class="modal__contents--room">{{item.room}}</li>
-        <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">更新</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
-      </ul>
-      {% endfor %}
-      <div class="modal__contents-type--edit-btn">
-        <p class="btn btn--disabled" id="btn-close">閉じる</p>
-      </div>
-    </div>
-  </div>
-  <!-- /modalEdit -->
-
-
-  <!-- start body-wrap -->
+  <!-- body_wrap -->
   <div class="body">
     
-    <!-- start sidebar -->
-    <div class="body__sidebar">
-        <div class="body__sidebar-logo">
-          <a href="{% url 'index' %}"><img class="body__sidebar-logo-img" src="{% static 'img/logo.svg' %}" alt=""></a>
-        </div>
-        {% comment %} <a class="btn body__sidebar-btn-create " href="{% url 'index' %}">作成ページ</a> {% endcomment %}
-        <div class="body__sidebar-time">
-          <div class="body__sidebar-date">
-            <span id="year">{% now "Y" %}</span><br><span id="month">{% now "m" %}</span><span id="space">/</span><span id="date">{% now "d" %}</span><span id="day">{% now "l" %}</span>
-          </div>
-        </div>
-    </div>
-    <!-- end sidebar -->
+    <!-- sidebar -->
+    {% include 'create/sidebar.html' %}
+    <!-- /sidebar -->
 
-    <!-- start main-contents -->
+    <!-- main-contents -->
     <div class="body__main">
-      <!-- start main-menu -->
+      <!-- main-menu -->
       <div class="body__main-menu">
         <h2 class="body__main-menu-title">{{title}}</h2>
         <div class="body__main-menu-btn-wrap">
@@ -117,9 +32,9 @@
           <p class="btn btn--edit body__main-menu-btn-edit" id="btn-edit">編集画面はこちら</p>
         </div>
       </div>
-      <!-- end main-menu -->
+      <!-- /main-menu -->
 
-      <!-- start time-table -->
+      <!-- time-table -->
       <table class="body__main-table">
         <thead>
           <tr>
@@ -198,13 +113,13 @@
           </tr>
         </tbody>
       </table>
-      <!-- end time-table -->
+      <!-- /time-table -->
 
     </div>
-    <!-- end main-contents -->
+    <!-- /main-contents -->
 
   </div>
-  <!-- end body-wrap -->
+  <!-- /body-wrap -->
 
 </body>
 </html>
