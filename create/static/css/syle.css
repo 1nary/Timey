@@ -241,7 +241,7 @@ p {
 .modal__bg {
   display: none;
   z-index: 50;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.309);
   position: fixed;
   top: 0;
   left: 0;
