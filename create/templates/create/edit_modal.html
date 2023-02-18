@@ -19,7 +19,7 @@
       <li class="modal__contents--name">{{item.name}}</li>
       <li class="modal__contents--teacher">{{item.teacher}}</li>
       <li class="modal__contents--room">{{item.room}}</li>
-      <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">更新</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
+      <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">編集</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
     </ul>
     {% endfor %}
     <button class="btn btn-close" id="btn-close">

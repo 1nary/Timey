@@ -28,7 +28,7 @@ def edit(request,num):
   params = {
     'data': data,
     'form': createForm(instance=obj),
-    'title': '履修更新',
+    'title': '履修編集',
   }
   if(request.method == 'POST'):
     LectureInfo = createForm(request.POST, instance=obj)
