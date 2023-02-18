@@ -1,41 +1,44 @@
 {% load static %}
 
-<div class="modal modal-type-create">
+<div class="modal">
   <div class="modal__bg">
   </div>
-    <div class="modal__contents modal__contents-type--create">
-      <form action="{% url 'index' %}" method="post" class="form form--type-create" autocomplete="off">
-        {% csrf_token %}
-        <p class="form__contents-title">曜日</p>
-        <div class="form__contents form__contents-type--select">
-          {% for radio in form.week %}
-            {{ radio.tag }}
-            <label class="form__label form__label--week" for="id_week_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
-          {% endfor %}
-        </div>
-        <p class="form__contents-title">時限</p>
-        <div class="form__contents form__contents-type--select">
-          {% for radio in form.period %}
-            {{ radio.tag }}
-            <label class="form__label form__label--period" for="id_period_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
-          {% endfor %}
-        </div>
-        <div class="form__contents form__contents-type--input-text">
-          <label class="form__contents-title" for="id_name">講義</label>
-          {{form.name}}
-        </div>
-        <div class="form__contents form__contents-type--input-text">
-          <label class="form__contents-title" for="id_teacher">担当教員</label>
-          {{form.teacher}}
-        </div>
-        <div class="form__contents form__contents-type--input-text">
-          <label class="form__contents-title" for="id_room">教室</label>
-          {{form.room}}
-        </div>
-        <div class="form__contents form__contents--btn">
-          <p class="btn btn--disabled" id="btn-close">閉じる</p>
-          <input class="btn form__btn" type="submit" value="追加する">
-        </div>
-      </form>
-    </div>
+  <div class="modal__contents modal__contents-type--create">
+    <form action="{% url 'index' %}" method="post" class="form form--type-create" autocomplete="off">
+      {% csrf_token %}
+      <p class="form__contents-title">曜日</p>
+      <div class="form__contents form__contents-type--select">
+        {% for radio in form.week %}
+          {{ radio.tag }}
+          <label class="form__label form__label--week" for="id_week_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
+        {% endfor %}
+      </div>
+      <p class="form__contents-title">時限</p>
+      <div class="form__contents form__contents-type--select">
+        {% for radio in form.period %}
+          {{ radio.tag }}
+          <label class="form__label form__label--period" for="id_period_{{ forloop.counter0 }}">{{ radio.choice_label}}</label>
+        {% endfor %}
+      </div>
+      <div class="form__contents form__contents-type--input-text">
+        <label class="form__contents-title" for="id_name">講義</label>
+        {{form.name}}
+      </div>
+      <div class="form__contents form__contents-type--input-text">
+        <label class="form__contents-title" for="id_teacher">担当教員</label>
+        {{form.teacher}}
+      </div>
+      <div class="form__contents form__contents-type--input-text">
+        <label class="form__contents-title" for="id_room">教室</label>
+        {{form.room}}
+      </div>
+      <div class="form__contents form__contents--btn">
+        {% comment %} <p class="btn btn--disabled" id="btn-close">閉じる</p> {% endcomment %}
+        <input class="btn form__btn" type="submit" value="追加する">
+      </div>
+    </form>
+    <button class="btn btn-close" id="btn-close">
+      <img src="{% static 'img/x.svg' %}" alt="">
+    </button>
+  </div>
 </div>

@@ -22,8 +22,8 @@
       <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">更新</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
     </ul>
     {% endfor %}
-    <div class="modal__contents-type--edit-btn">
-      <p class="btn btn--disabled" id="btn-close">閉じる</p>
-    </div>
+    <button class="btn btn-close" id="btn-close">
+      <img src="{% static 'img/x.svg' %}" alt="">
+    </button>
   </div>
 </div>

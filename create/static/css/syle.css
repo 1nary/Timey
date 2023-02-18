@@ -16,7 +16,7 @@ body {
   line-height: 1;
   letter-spacing: 2px;
   user-select: none;
-  background: #F8F8F8;
+  background: #F6F8F9;
   /* background: url(../img/wave5-1.svg) no-repeat;
   background-position: bottom; */
 }
@@ -88,9 +88,24 @@ p {
   cursor: pointer;
 }
 .btn:hover {
-  /* opacity: 0.8; */
   transition: 0.2s;
   scale: 1.05;
+}
+.btn-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-close:hover {
+  transform: scale(1.1);
+  transform-origin: center;
+  transition: 0.2s;
 }
 .btn--disabled {
   background: transparent;
@@ -228,13 +243,13 @@ p {
 }
 .form__label:hover {
   opacity: 0.8;
-  transition: 0.1tous;
+  transition: 0.2;
 }
 .form__label--period {
   padding: 9px 20px;
 }
 .form__btn {
-  margin-left: 15px;
+  margin: 0 auto;
 }
 
 .modal__bg {
@@ -253,7 +268,7 @@ p {
   border-radius: 8px;
   background: #fff;
   color: #26425F;
-  padding: 55px;
+  padding: 60px 60px 30px;
   width: 665px;
   position: fixed;
   top: 50%;
@@ -261,7 +276,6 @@ p {
   transform: translate(-50%, -50%);
 }
 .modal__contents-type--edit {
-  display: none;
   width: 1025px;
   min-height: 299px;
   max-height: 653px;
@@ -508,7 +522,7 @@ p {
   height: 85px;
 }
 .body__main-table tbody tr td {
-  background: #F8F8F8;
+  background: #F6F8F9;
 }
 .body__main-table tbody tr td p {
   overflow: hidden;
