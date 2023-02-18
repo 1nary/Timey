@@ -49,10 +49,16 @@ p {
 }
 
 [type=submit] {
-  border: none;
+  background: #26425F;
+  color: #fff;
+  border: 1px solid #26425F;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  width: 170px;
+  padding: 12px 6px;
   font-size: 14px;
-  line-height: 1;
-  background: none;
+  cursor: pointer;
 }
 
 [type=text] {
