@@ -23,7 +23,7 @@ def index(request):
   return render(request, 'create/base.html', params)
 
 def edit(request,num):
-  data = Lecture.objects.all()
+  data = Lecture.objects.all().order_by('week','period')
   obj = Lecture.objects.get(id=num)
   params = {
     'data': data,
@@ -37,7 +37,7 @@ def edit(request,num):
   return render(request, 'create/edit.html', params)
 
 def delete(request, num):
-  data = Lecture.objects.all()
+  data = Lecture.objects.all().order_by('week','period')
   lecture = Lecture.objects.get(id=num)
   if(request.method=='POST'):
     lecture.delete()
