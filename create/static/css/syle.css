@@ -383,7 +383,7 @@ p {
 .body__sidebar-logo {
   padding: 0 20px;
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 500px;
 }
 .body__sidebar-logo-img {
   width: 100%;
@@ -455,6 +455,9 @@ p {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+}
+.body__sidebar-drop {
+  text-align: center;
 }
 .body__main {
   width: calc(100% - 270px);
