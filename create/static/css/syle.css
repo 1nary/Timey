@@ -281,6 +281,18 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 560px) {
+  .form__label {
+    padding: 9px 12px;
+  }
+  .modal__contents {
+    width: 430px;
+    padding: 60px 20px 30px;
+  }
+  .form__label--period {
+    padding: 9px 8px;
+  }
+}
 .modal__contents-type--edit {
   width: 1025px;
   min-height: 299px;
@@ -564,6 +576,22 @@ p {
   color: #003333;
   user-select: text;
   line-height: 1.3;
+}
+@media screen and (max-width: 560px) {
+  .body__main-table tbody tr td p {
+    font-size: 12px;
+  }
+  .body__main-table thead th:first-child {
+    height: 30px;
+    width: 30px;
+  }
+  .body__main-table thead th:nth-child(n+2) {
+    height: 30px;
+    font-size: 14px;
+  }
+  .body__main-table th, .body__main-table td {
+    padding: 0 2px;
+  }
 }
 .body__main-table tbody tr td p::selection {
   background: #26425F;
