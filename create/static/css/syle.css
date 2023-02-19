@@ -585,6 +585,9 @@ p {
   .body__main-menu-btn-wrap {
     margin: 0 auto;
   }
+  .body__main-menu-btn-wrap > .btn {
+    width: 130px;
+  }
   .body__main-table {
     border-radius: 0px;
     margin-top: 20px;
