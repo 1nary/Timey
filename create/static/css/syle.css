@@ -283,7 +283,7 @@ p {
 }
 .modal__contents__item {
   max-height: 450px;
-  padding: 0 7px;
+  padding: 10px 7px;
   overflow-y: scroll;
 }
 .modal__contents-type--edit {
