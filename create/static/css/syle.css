@@ -102,8 +102,8 @@ p {
   height: 40px;
   border-radius: 999px;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: -20px;
+  right: -20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +133,7 @@ p {
 }
 .btn-modal {
   font-size: 13px;
-  width: 90px;
+  width: 85px;
   padding: 10px;
 }
 .btn-modal-wrap {
@@ -200,7 +200,7 @@ p {
 .form__contents--btn {
   display: flex;
   align-items: center;
-  width: 354px;
+  width: 100%;
   margin: 50px auto 0;
 }
 .form__contents--delete-btn {
@@ -217,7 +217,7 @@ p {
   justify-content: space-between;
 }
 .form__contents-type--input-text {
-  width: 325px;
+  width: 80%;
   margin: 0 auto;
 }
 .form__input {
@@ -265,8 +265,8 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 .modal__contents {
   z-index: 55;
@@ -281,23 +281,15 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-@media screen and (max-width: 560px) {
-  .form__label {
-    padding: 9px 12px;
-  }
-  .modal__contents {
-    width: 430px;
-    padding: 60px 20px 30px;
-  }
-  .form__label--period {
-    padding: 9px 8px;
-  }
+.modal__contents__item {
+  max-height: 450px;
+  padding: 0 7px;
+  overflow-y: scroll;
 }
 .modal__contents-type--edit {
   width: 1025px;
   min-height: 299px;
   max-height: 653px;
-  overflow-y: scroll;
 }
 .modal__contents-type--edit-btn {
   margin-top: 50px;
@@ -608,5 +600,15 @@ p {
   }
   .body__main-table th, .body__main-table td {
     padding: 0 2px;
+  }
+  .form__label {
+    padding: 9px 12px;
+  }
+  .modal__contents {
+    width: 100vw;
+    padding: 60px 20px 30px;
+  }
+  .form__label--period {
+    padding: 9px 8px;
   }
 }

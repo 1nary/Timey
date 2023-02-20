@@ -12,16 +12,18 @@
       <li class="modal__contents-menu-title modal__contents--room">教室</li>
       <li class="modal__contents-menu-title modal__contents--action">アクション</li>
     </ul>
-    {% for item in data %}
-    <ul class="modal__contents-item">
-      <li class="modal__contents--week">{{item.get_week_display}}</li>
-      <li class="modal__contents--period">{{item.get_period_display}}</li>
-      <li class="modal__contents--name">{{item.name}}</li>
-      <li class="modal__contents--teacher">{{item.teacher}}</li>
-      <li class="modal__contents--room">{{item.room}}</li>
-      <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">編集</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
-    </ul>
-    {% endfor %}
+    <div class="modal__contents__item">
+      {% for item in data %}
+      <ul class="modal__contents-item">
+        <li class="modal__contents--week">{{item.get_week_display}}</li>
+        <li class="modal__contents--period">{{item.get_period_display}}</li>
+        <li class="modal__contents--name">{{item.name}}</li>
+        <li class="modal__contents--teacher">{{item.teacher}}</li>
+        <li class="modal__contents--room">{{item.room}}</li>
+        <li class="modal__contents--action btn-modal-wrap"><a class="btn btn-modal" href="{% url 'edit' item.id %}">編集</a><a class="btn btn--edit btn-modal" href="{% url 'delete' item.id %}">削除</a></li>
+      </ul>
+      {% endfor %}
+    </div>
     <button class="btn btn-close" id="btn-close">
       <img src="{% static 'img/x.svg' %}" alt="">
     </button>
