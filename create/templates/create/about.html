@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  {% include 'create/head.html' %}
+</head>
+<body>
+
+  <!-- body_wrap -->
+  <div class="body">
+    
+    <!-- sidebar -->
+    {% include 'create/sidebar.html' %}
+    <!-- /sidebar -->
+
+    <!-- main-contents -->
+    <div class="body__main body__main-about">
+      <p class="body__main__about-title">このサービスについて</p>
+      <p class="body__main__about-text">
+        ようこそtimeyへ!<br> 
+        timeyは履修登録のシミュレーションができるサービスです。<br>
+        履修登録は、大学に通う誰もが経験する道であり、計画性を持って取り組むことが重要です。<br>
+        しかし、大学のシステムによっては登録期間外にアクセスができないなんてことも...<br>
+        大学生活を存分に楽しみ、卒業後を見据えた履修計画をしてもらうことを期待して開発を行いました!<br>
+        timeyを活用して、あなただけの履修計画を。
+      </p>
+    </div>
+    <!-- /main-contents -->
+
+  </div>
+  <!-- /body-wrap -->
+
+</body>
+</html>

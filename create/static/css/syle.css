@@ -458,6 +458,20 @@ p {
   padding: 25px 40px 25px 5px;
   color: #fff;
 }
+.body__main-about {
+  padding-top: 80px;
+  padding-left: 42px;
+  color: #26425F;
+}
+.body__main__about-title {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.body__main__about-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
 
 .body__main-menu {
   background: #003333;

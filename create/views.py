@@ -19,6 +19,8 @@ def index(request):
     'form': createForm(),
     'data': data,
     'title': '履修作成',
+    'page_title': 'timey - web履修管理',
+
   }
   return render(request, 'create/base.html', params)
 
@@ -29,6 +31,7 @@ def edit(request,num):
     'data': data,
     'form': createForm(instance=obj),
     'title': '履修編集',
+    'page_title': 'timey - web履修管理',
   }
   if(request.method == 'POST'):
     LectureInfo = createForm(request.POST, instance=obj)
@@ -47,5 +50,12 @@ def delete(request, num):
     'id': num,
     'obj': lecture,
     'title': '履修削除',
+    'page_title': 'timey - web履修管理',
   }
   return render(request, 'create/delete.html',params)
+
+def about(request):
+  params = {
+    'page_title': 'このサービスについて',
+  }
+  return render(request, 'create/about.html', params)
