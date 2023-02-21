@@ -1,5 +1,4 @@
 env
-db.sqlite3
 create/__pycache__/forms.cpython-39.pyc
 create/__pycache__/views.cpython-39.pyc
 .DS_Store

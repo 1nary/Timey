@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  {% include 'create/head.html' %}
+</head>
+<body>
+  
+  <!-- create_modal  -->
+  {% include 'create/create_modal.html' %}
+  <!-- /create_modal -->
+
+  <!-- edit_modal -->
+  {% include 'create/edit_modal.html' %}
+  <!-- /edit_modal -->
+
+  <!-- body_wrap -->
+  <div class="body">
+    
+    <!-- sidebar -->
+    {% include 'create/sidebar.html' %}
+    <!-- /sidebar -->
+
+    <!-- main-contents -->
+    <div class="body__main">
+      <!-- main-menu -->
+      <div class="body__main body__main-service">
+        <p class="body__main__service-title">新規登録すると、履修を作成・管理できます</p>
+        <p class="body__main__service-text">
+          <form class="login" method="POST" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {% if form.errors %}
+            <div class="form__account-error">
+              {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+            <div class="form__account">
+              <p class="form__account-label">{{ form.email.label }}</p>
+              <p class="form__account-input">{{ form.email }}</p>
+            </div>
+            <div class="form__account">
+              <p class="form__account-label">{{ form.password1.label }}</p>
+              <p class="form__account-input">{{ form.password1 }}</p>
+            </div>
+            <div class="form__account">
+              <p class="form__account-label">{{ form.password2.label }}</p>
+              <p class="form__account-input">{{ form.password2 }}</p>
+            </div>
+            <div class="form__account-submit">
+              <button class="primaryAction" type="submit">新規登録</button>
+            </div>
+            <p class="form__account-hasaccount">
+              <a href="{% url 'account_login' %}">アカウントをお持ちの方</a>
+            </p>
+          </form>
+        </p>
+      </div>
+      <!-- /main-menu -->
+
+    </div>
+    <!-- /main-contents -->
+
+  </div>
+  <!-- /body-wrap -->
+
+</body>
+</html>

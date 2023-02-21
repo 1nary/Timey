@@ -27,10 +27,12 @@
       <!-- main-menu -->
       <div class="body__main-menu">
         <h2 class="body__main-menu-title">{{title}}</h2>
+        {% if user.is_authenticated %}
         <div class="body__main-menu-btn-wrap">
           <p class="btn body__main-menu-btn" id="btn-create">入力する</p>
           <p class="btn btn--edit body__main-menu-btn-edit" id="btn-edit">編集する</p>
         </div>
+        {% endif %}
       </div>
       <!-- /main-menu -->
 

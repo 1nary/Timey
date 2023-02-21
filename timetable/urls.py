@@ -5,4 +5,5 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('create.urls')),
+    path('', include('allauth.urls')),
 ]

@@ -62,6 +62,11 @@ p {
   cursor: pointer;
 }
 
+[type=submit]:hover {
+  transition: 0.2s;
+  scale: 1.05;
+}
+
 [type=text] {
   border: none;
   border-radius: 8px;
@@ -458,17 +463,17 @@ p {
   padding: 25px 40px 25px 5px;
   color: #fff;
 }
-.body__main-about {
+.body__main-service {
   padding-top: 80px;
   padding-left: 42px;
   color: #26425F;
 }
-.body__main__about-title {
+.body__main__service-title {
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 30px;
 }
-.body__main__about-text {
+.body__main__service-text {
   font-size: 14px;
   line-height: 1.5;
 }
@@ -570,8 +575,42 @@ p {
 .body__main-table tbody tr td p::selection {
   background: #26425F;
   color: #fff;
-}/*# sourceMappingURL=syle.css.map */
+}
 
+.form__account {
+  margin-bottom: 20px;
+}
+.form__account-label {
+  margin-bottom: 10px;
+}
+.form__account-input > input {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
+  color: #26425F;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 18px;
+  outline-width: 0px;
+  background: #fff;
+}
+.form__account-forget {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.form__account-submit {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.form__account-hasaccount {
+  font-size: 14px;
+}
+.form__account-hasaccount > a:hover {
+  text-decoration: underline;
+}
+.form__account-error {
+  margin-bottom: 25px;
+  font-weight: 700;
+}
 /* メディアクエリ */
 
 @media screen and (max-width: 928px) {
