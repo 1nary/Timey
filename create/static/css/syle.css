@@ -48,6 +48,10 @@ p {
   padding: 0;
 }
 
+label {
+  cursor: pointer;
+}
+
 [type=submit] {
   appearance: none;
   background: #26425F;
@@ -336,6 +340,10 @@ p {
   margin-top: 22px;
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
 }
+.modal__contents__item-message {
+  text-align: center;
+  padding: 40px 0;
+}
 .modal__contents--name {
   width: 226px;
   padding: 0 5px;
@@ -589,6 +597,7 @@ p {
 }
 .form__account-label {
   margin-bottom: 10px;
+  display: inline-block;
 }
 .form__account-input > input {
   border: 1px solid #e2e8f0;
@@ -617,6 +626,13 @@ p {
 .form__account-error {
   margin-bottom: 25px;
   font-weight: 700;
+}
+.form__account-error > p {
+  margin: 3px 0;
+}
+.form__account-password-validate {
+  font-size: 13px;
+  margin-top: -10px;
 }
 /* メディアクエリ */
 

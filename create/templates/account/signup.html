@@ -32,7 +32,11 @@
             {% csrf_token %}
             {% if form.errors %}
             <div class="form__account-error">
-              {{ form.non_field_errors }}
+              {% for errors in form.errors.values %}
+                  {% for error in errors %}
+                      <p>{{ error }}</p>
+                  {% endfor %}
+              {% endfor %}
             </div>
             {% endif %}
             <div class="form__account">
@@ -47,6 +51,7 @@
               <p class="form__account-label">{{ form.password2.label }}</p>
               <p class="form__account-input">{{ form.password2 }}</p>
             </div>
+            <p class="form__account-password-validate">半角英数、8文字以上で入力してください</p>
             <div class="form__account-submit">
               <button class="primaryAction" type="submit">新規登録</button>
             </div>

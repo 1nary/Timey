@@ -13,6 +13,9 @@
       <li class="modal__contents-menu-title modal__contents--action">アクション</li>
     </ul>
     <div class="modal__contents__item">
+      {% if not data %}
+      <p class="modal__contents__item-message">履修情報がありません。</p>
+      {% endif %}
       {% for item in data %}
       <ul class="modal__contents-item">
         <li class="modal__contents--week">{{item.get_week_display}}</li>

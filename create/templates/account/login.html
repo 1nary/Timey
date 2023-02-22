@@ -36,14 +36,14 @@
             </div>
             {% endif %}
             <div class="form__account">
-              <p class="form__account-label">{{ form.login.label }}</p>
+              <label for="id_login" class="form__account-label">{{ form.login.label }}</label>
               <p class="form__account-input">{{ form.login }}</p>
             </div>
             <div class="form__account">
-              <p class="form__account-label">{{ form.password.label }}</p>
+              <label for="id_password" class="form__account-label">{{ form.password.label }}</label>
               <p class="form__account-input">{{ form.password }}</p>
             </div>
-            <p>ログインしたままにする {{ form.remember }}</p>
+            <label>ログインしたままにする {{ form.remember }}</label>
             <div class="form__account-submit">
               <button class="primaryAction" type="submit">ログイン</button>
             </div>
