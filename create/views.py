@@ -14,9 +14,6 @@ def index(request):
       print('')
     else:
       LectureInfo = createForm(request.POST, instance=obj)
-    if request.user:
-      return redirect(to='/login')
-    else:
       LectureInfo.save()
     return redirect(to='/')
   params = {
