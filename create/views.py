@@ -2,7 +2,8 @@ from django.shortcuts import render
 from create.models import Lecture
 from django.shortcuts import redirect
 from create.forms import createForm
-    
+from django.contrib.auth.decorators import login_required
+
 def index(request):
   data = Lecture.objects.all().order_by('week','period')
   if(request.method == 'POST'):
@@ -13,6 +14,9 @@ def index(request):
       print('')
     else:
       LectureInfo = createForm(request.POST, instance=obj)
+    if request.user:
+      return redirect(to='/login')
+    else:
       LectureInfo.save()
     return redirect(to='/')
   params = {
@@ -20,7 +24,6 @@ def index(request):
     'data': data,
     'title': '履修作成',
     'page_title': 'timey - web履修管理',
-
   }
   return render(request, 'create/base.html', params)
 

@@ -84,6 +84,11 @@ p {
 [type=text]::placeholder {
   color: #8d8d8d;
 }
+[type=checkbox] {
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .btn {
   background: #26425F;
@@ -455,6 +460,8 @@ p {
 }
 .body__sidebar-drop {
   text-align: center;
+  color: #26425F;
+  font-size: 14px;
 }
 .body__main {
   width: calc(100% - 270px);
