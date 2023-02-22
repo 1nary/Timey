@@ -25,8 +25,8 @@
     <!-- main-contents -->
     <div class="body__main">
       <!-- main-menu -->
-      <div class="body__main body__main-service">
-        <p class="body__main__service-title">新規登録すると、履修を作成・管理できます</p>
+      <div class="body__main-service">
+        <p class="body__main__service-title">新規登録</p>
         <p class="body__main__service-text">
           <form class="login" method="POST" action="{% url 'account_signup' %}">
             {% csrf_token %}
@@ -40,15 +40,15 @@
             </div>
             {% endif %}
             <div class="form__account">
-              <p class="form__account-label">{{ form.email.label }}</p>
+              <label for="id_email" class="form__account-label">{{ form.email.label }}</label>
               <p class="form__account-input">{{ form.email }}</p>
             </div>
             <div class="form__account">
-              <p class="form__account-label">{{ form.password1.label }}</p>
+              <label for="id_password1" class="form__account-label">{{ form.password1.label }}</label>
               <p class="form__account-input">{{ form.password1 }}</p>
             </div>
             <div class="form__account">
-              <p class="form__account-label">{{ form.password2.label }}</p>
+              <label for="id_password2" class="form__account-label">{{ form.password2.label }}</label>
               <p class="form__account-input">{{ form.password2 }}</p>
             </div>
             <p class="form__account-password-validate">半角英数、8文字以上で入力してください</p>

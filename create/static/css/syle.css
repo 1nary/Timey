@@ -391,7 +391,7 @@ label {
 }
 
 .body__sidebar-logo {
-  padding: 0 20px;
+  padding: 0 15px;
   display: flex;
   margin-bottom: 500px;
 }
@@ -479,8 +479,7 @@ label {
   color: #fff;
 }
 .body__main-service {
-  padding-top: 80px;
-  padding-left: 42px;
+  padding: 80px 40px;
   color: #26425F;
 }
 .body__main__service-title {
@@ -635,7 +634,11 @@ label {
   margin-top: -10px;
 }
 /* メディアクエリ */
-
+@media screen and (min-width: 929px) {
+  .body__main-service {
+    width: 600px;
+  }
+}
 @media screen and (max-width: 928px) {
   .body__main {
     width: 100%;
