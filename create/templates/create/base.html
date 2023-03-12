@@ -54,66 +54,66 @@
         <tbody>
           <tr>
             <th>1</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '1' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
           <tr>
             <th>2</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '2' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
           <tr>
             <th>3</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '3' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
           <tr>
             <th>4</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '4' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
           <tr>
             <th>5</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '5' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
           <tr>
             <th>6</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '6' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
           <tr>
             <th>7</th>
-            <td>{% for item in data %} {% if item.week == '1' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '2' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '3' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '4' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '5' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
-            <td>{% for item in data %} {% if item.week == '6' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p><p class="body__main-table__room">{{item.room}}</p>{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '1' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '2' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '3' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '4' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '5' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
+            <td>{% for item in data %} {% if item.week == '6' and item.period == '7' %}<p>{{item.name}}</p> <p>{{item.teacher}}</p>{% if item.room %}<p class="body__main-table__room">{{item.room}}</p>{% else %}<p></p>{% endif %}{% endif %}{% endfor %}</td>
           </tr>
         </tbody>
       </table>

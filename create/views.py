@@ -3,14 +3,16 @@ from create.models import Lecture
 from django.shortcuts import redirect
 from create.forms import createForm
 from django.contrib.auth.decorators import login_required
+from accounts.models import CustomUser
 
 def index(request):
-  data = Lecture.objects.all().order_by('week','period')
+  data = Lecture.objects.filter(user=request.user.id).order_by('week','period')
   if(request.method == 'POST'):
-    obj = Lecture()
+    user = CustomUser(request.user.id)
+    obj = Lecture(user=user)
     week = request.POST['week']
     period = request.POST['period']
-    if Lecture.objects.filter(week=week,period=period).exists():
+    if Lecture.objects.filter(week=week,period=period,user=request.user.id).exists():
       print('')
     else:
       LectureInfo = createForm(request.POST, instance=obj)
@@ -25,7 +27,7 @@ def index(request):
   return render(request, 'create/base.html', params)
 
 def edit(request,num):
-  data = Lecture.objects.all().order_by('week','period')
+  data = Lecture.objects.filter(user=request.user.id).order_by('week','period')
   obj = Lecture.objects.get(id=num)
   params = {
     'data': data,
@@ -40,7 +42,7 @@ def edit(request,num):
   return render(request, 'create/edit.html', params)
 
 def delete(request, num):
-  data = Lecture.objects.all().order_by('week','period')
+  data = Lecture.objects.filter(user=request.user.id).order_by('week','period')
   lecture = Lecture.objects.get(id=num)
   if(request.method=='POST'):
     lecture.delete()

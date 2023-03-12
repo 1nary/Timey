@@ -45,7 +45,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
           'Unselect this instead of deleting accounts.'
       ),
   )
-
   objects = UserManager()
   USERNAME_FIELD = 'email'
   EMAIL_FIELD = 'email'
