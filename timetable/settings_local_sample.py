@@ -1,2 +1,2 @@
 # Djangoの秘密キー
-SECRET_KEY = ''
+SECRET_KEY = 'sample'

@@ -2,7 +2,7 @@ import os
 from decouple import config
 from dj_database_url import parse as dburl
 from pathlib import Path
-from .settings_local import *
+from .settings_local_sample import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
