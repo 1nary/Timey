@@ -1,22 +1,15 @@
 import os
 from decouple import config
 from dj_database_url import parse as dburl
-from pathlib import Path
+from pathlib import Pathfrom 
+from .settings_local import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-SECRET_KEY = 'django-insecure-1um)tlpy&!p(4wv=fo-d61^jqd8xs20mdsxfo(s!bf&*3ey56v'
 
 DEBUG = True
 ALLOWED_HOSTS=["*"]
 
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
