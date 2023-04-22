@@ -3,30 +3,124 @@
 <div class="body__sidebar">
   <div class="body__sidebar-logo">
     <a href="{% url 'index' %}">
-      <img class="body__sidebar-logo-img" src="{% static 'img/logo.svg' %}" alt="">
+      <img
+        class="body__sidebar-logo-img"
+        src="{% static 'img/logo.svg' %}"
+        alt=""
+      />
     </a>
   </div>
   <div class="body__sidebar-time">
     <div class="body__sidebar-date">
-      <span id="year">{% now "Y" %}</span><br><span id="month">{% now "m" %}</span><span id="space">/</span><span id="date">{% now "d" %}</span><span id="day">{% now "l" %}</span>
+      <span id="year">{% now "Y" %}</span><br /><span id="month"
+        >{% now "m" %}</span
+      ><span id="space">/</span><span id="date">{% now "d" %}</span
+      ><span id="day">{% now "l" %}</span>
     </div>
   </div>
   <div class="body__sidebar-drop">
-    <button id="dropdownMenuIconHorizontalButton" data-dropdown-placement="top" data-dropdown-toggle="dropdownDotsHorizontal" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
-      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+    <button
+      id="dropdownAvatarNameButton"
+      data-dropdown-toggle="dropdownAvatarName"
+      data-dropdown-placement="top"
+      class="flex items-center text-sm font-bold rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white"
+      type="button"
+    >
+      <span class="sr-only">Open user menu</span>
+      <img
+        class="w-8 h-8 mr-2 rounded-full"
+        src="https://avatar.oxro.io/avatar.svg?name={{ user }}&background=26425F&caps=3&bold=true"
+        alt="user photo"
+      />
+      <p>{{user}}</p>
+      <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div
+      id="dropdownAvatarName"
+      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+    >
+      <ul
+        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton"
+      >
+        <li>
+          <a
+            href={% url 'about' %}
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >アプリについて</a
+          >
+        </li>
+      </ul>
+      {% if user.is_authenticated %}
+      <div class="py-2">
+        <a
+          href={% url 'account_logout' %}
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+          >ログアウト</a
+        >
+      </div>
+      {% else %}
+      <div class="py-2">
+        <a
+          href={% url 'account_login' %}
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+          >ログイン</a
+        >
+      </div>
+      {% endif %}
+    </div>
+    {% comment %}
+    <button
+      id="dropdownMenuIconHorizontalButton"
+      data-dropdown-placement="top"
+      data-dropdown-toggle="dropdownDotsHorizontal"
+      class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      type="button"
+    >
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
+        ></path>
+      </svg>
     </button>
     <!-- Dropdown menu -->
-    <div id="dropdownDotsHorizontal" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
-          <li>
-            <a href="{% url 'about' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">アプリについて</a>
-          </li>
-        </ul>
-        {% if user.is_authenticated %}
-        <div class="py-2">
-          <a href="{% url 'account_logout' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">ログアウト</a>
-        </div>
-        {% endif %}
+    <div
+      id="dropdownDotsHorizontal"
+      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+    >
+      <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+        <div class="truncate">{{ user }}</div>
+      </div>
+      <ul
+        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownMenuIconHorizontalButton"
+      >
+        <li>
+          <a
+            href="{% url 'about' %}"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >アプリについて</a
+          >
+        </li>
+      </ul>
+      {% if user.is_authenticated %}
+      <div class="py-2">
+        <a
+          href="{% url 'account_logout' %}"
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+          >ログアウト</a
+        >
+      </div>
+      {% endif %}
     </div>
+    {% endcomment %}
   </div>
 </div>
