@@ -533,6 +533,12 @@ label {
 .body__main-table td {
   position: relative;
 }
+.body__main-table__name {
+  text-decoration: underline;
+  color: #26425F;
+  padding-bottom: 4px;
+  display: inline-block;
+}
 .body__main-table__room {
   position: absolute;
   right: 2px;
@@ -580,7 +586,6 @@ label {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 160px;
   font-size: 14px;
   color: #003333;
   user-select: text;
