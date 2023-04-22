@@ -538,6 +538,8 @@ label {
   color: #26425F;
   padding-bottom: 4px;
   display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .body__main-table__room {
   position: absolute;
